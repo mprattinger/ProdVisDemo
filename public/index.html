@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/gauge.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div id="power-gauge"></div>
+
+    <script type="text/javascript" src="https://d3js.org/d3.v2.min.js"></script>
+    <script type="text/javascript" src="js/gauge.js"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var powerGauge = new Gauge("#power-gauge", {
+          size: 300,
+          clipWidth: 300,
+          clipHeight: 300,
+          ringWidth: 60,
+          maxValue: 10,
+          transitionMs: 4000
+        });
+        powerGauge.render();
+
+        function updateReadings() {
+          powerGauge.update(Math.random() * 10);
+        }
+
+        updateReadings();
+        setInterval(() => {
+          updateReadings();
+        }, 5 * 1000);
+      });
+    </script>
+  </body>
+</html>

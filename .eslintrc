@@ -1,0 +1,13 @@
+{
+  "extends": ["standard"],
+  "plugins": ["prettier"],
+  "rules": {
+    "space-before-function-paren": "off",
+    "spaced-comment": "off",
+    "semi": "off",
+    "quotes": ["error", "double"],
+    "prettier/prettier": "error",
+    "no-var": "error",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }]
+  }
+}
